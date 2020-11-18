@@ -14,6 +14,10 @@ docker-compose build
 # dockerコンテナ内でdjango環境構築
 docker run --rm -it -v /$(pwd)://src -w //src --entrypoint //bin/bash my-django
 /src# django-admin startproject config .
+
+# DBマイグレーション&管理者ユーザ作成
+/src# python manage.py migrate
+/src# python manage.py createsuperuser
 ```
 
 
